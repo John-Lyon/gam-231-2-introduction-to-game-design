@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cake34f00x8uy"]
+
+[ext_resource type="PackedScene" uid="uid://btbo71j588o63" path="res://scene/player.tscn" id="1_dbls1"]
+[ext_resource type="FontFile" uid="uid://b2mxee61m1ntq" path="res://Assets/2D Resources/fonts/PixelOperator8-Bold.ttf" id="2_33cqm"]
+[ext_resource type="PackedScene" uid="uid://dv85u16ilylws" path="res://scene/floor.tscn" id="3_33cqm"]
+
+[node name="Game" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_dbls1")]
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+position = Vector2(9, -7)
+zoom = Vector2(4, 4)
+
+[node name="Label" type="Label" parent="player/Camera2D"]
+offset_left = -71.0
+offset_top = -31.0
+offset_right = 65.0
+offset_bottom = -15.0
+theme_override_fonts/font = ExtResource("2_33cqm")
+text = "John Lyon"
+
+[node name="floor" parent="." instance=ExtResource("3_33cqm")]
+position = Vector2(-21, -10)

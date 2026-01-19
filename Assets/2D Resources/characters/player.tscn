@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsfdko4uywd21"]
+
+[ext_resource type="Texture2D" uid="uid://dxw065uj7pgov" path="res://Assets/2D Resources/characters/DinoSprites - mort.png" id="1_mt2qk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnhoo"]
+atlas = ExtResource("1_mt2qk")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_85qyo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cnhoo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8ngin"]
+radius = 4.0
+
+[node name="player" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(9, -9)
+sprite_frames = SubResource("SpriteFrames_85qyo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(9, -7)
+shape = SubResource("CircleShape2D_8ngin")
